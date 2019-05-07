@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.kpu.cubism.MemoryMapper">
+
+
+	<!-- 그래프 출력 -->
+	<select id="getMemoryChart" parameterType="MemoryVo" resultType="MemoryVo">
+  		SELECT
+  		 memoryIdx,
+  		 memoryFlag,
+  		 memoryRank,
+  		 memorySec,
+  		 memoryDate
+  		FROM 
+  		 memory	
+	</select>
+	
+	<!-- 그래프 출력 
+	<select id="getMemoryChart" parameterType="MemoryVo" resultType="MemoryVo">
+  		SELECT
+  		 memoryIdx,
+  		 memoryFlag,
+  		 memoryRank,
+  		 memorySec,
+  		 memorymaxSec,
+  		 memoryminSec,
+  		 memoryDate
+  		FROM 
+  		 memory	
+	</select>
+	-->
+	<!-- Max 시간 초 
+	<select id="getMemoryList" parameterType="MemoryVo" resultType="MemoryVo">
+  		SELECT
+  		 memoryIdx,
+  		 memoryFlag,
+  		 memoryRank,
+  		 memorySec,
+  		 memorymaxSec,
+  		 memoryminSec,
+  		 memoryDate
+  		FROM 
+  		 memory
+  		WHERE
+  		 memoryFlag = 'OR'	
+	</select>
+	-->
+	<!-- Max 시간 초 -->
+	<select id="getMemoryList" parameterType="MemoryVo" resultType="MemoryVo">
+  		SELECT
+  		 memoryIdx,
+  		 memoryFlag,
+  		 memoryRank,
+  		 memorySec,
+  		 memoryDate
+  		FROM 
+  		 memory
+  		WHERE
+  		 memoryFlag = 'OR'	
+	</select>
+	
+	<!-- Min 시간 초 -->
+	
+	<!-- 기간 출력(조회) -->
+	
+	<!-- Max 시간 초 -->
+	  
+</mapper>

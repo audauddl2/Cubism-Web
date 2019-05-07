@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/root-context.xml
+			/WEB-INF/spring/security-context.xml
+		</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- 로그인 중복방지 -->
+	<listener>
+          <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
+
+	<!-- 인코딩 설정 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		
+		<!--
+		 	forceEncoding 가 true 이면, HttpServeltRequest, HttpServeltResponse 객체
+			둘다에 setCharacterEncoding 메소드를 이용하여 기존값을 무시하고 입력된 encoding 값으로
+			강제	셋팅해준다.
+			false, HttpServletRequest 객체의 getCharacterEncoding() 값이 null 일떄만
+			setCharacterEncoding 메소드를 이용하여 문자인코딩을 셋팅해준다.
+		 -->
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>	
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring Security --> 
+	<filter> 
+		<filter-name>springSecurityFilterChain</filter-name> 
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> 
+	</filter>
+	<filter-mapping> 
+		<filter-name>springSecurityFilterChain</filter-name> 
+		<url-pattern>/*</url-pattern> 
+	</filter-mapping>
+	
+</web-app>
