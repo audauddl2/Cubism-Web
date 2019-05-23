@@ -40,12 +40,12 @@
 		    <version>1.16</version>
 		</dependency>
 				
-		<!-- JSON                                                          2.8.11.1로 버전 업해야할듯-->
+		<!-- JSON -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
-		    <version>2.9.8</version>
+		    <version>2.9.9</version>
 		</dependency>
 		<dependency>
 		    <groupId>com.googlecode.json-simple</groupId>
