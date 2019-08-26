@@ -1,6 +1,6 @@
 # Cubism-Web
-FrontEnd: bootstrap(AdminLTE)
-BackEnd: Spring(Java)
+* __FrontEnd:__ bootstrap(AdminLTE)
+* __BackEnd:__ Spring(Java)
 
 시각장애인을 위한 기억력 게임기 웹 페이지 개발
 
@@ -8,7 +8,6 @@ BackEnd: Spring(Java)
 2. 새로운 버전(게임)을 업로드
 
 ## 페이지 설명
-AdminLTE 
 * __Login & Register Page__
 ![LoginRegister](https://github.com/doorisopen/Cubism-Web/blob/master/img/CubismWeb_loginPage.JPG)
 
