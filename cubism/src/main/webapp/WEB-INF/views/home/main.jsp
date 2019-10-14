@@ -114,8 +114,8 @@
             <!-- /.box-header -->
             <!-- form start -->
             
-              <div class="box-body">
-              메인페이지 입니다.
+              <div class="box-body" style="text-align:center;">
+              <video width="80%" src="resources/video/demovideo.MP4" controls></video>
 <!-- 
                 	<sec:authorize access="isAnonymous()"> 
                 	<p>

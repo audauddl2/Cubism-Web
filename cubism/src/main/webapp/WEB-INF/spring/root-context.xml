@@ -23,7 +23,8 @@
         <property name="username" value="root" />
         <property name="password" value="root" />
     </bean>
-        
+    
+	
     <!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
    		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
